@@ -1,0 +1,132 @@
+import { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [display, setDisplay] = useState("0");
+  const [firstNumber, setFirstNumber] = useState(null);
+  const [operator, setOperator] = useState(null);
+  const [waitingForSecondNumber, setWaitingForSecondNumber] = useState(false);
+
+  const inputNumber = (number) => {
+    if (waitingForSecondNumber) {
+      setDisplay(number);
+      setWaitingForSecondNumber(false);
+    } else {
+      setDisplay(display === "0" ? number : display + number);
+    }
+  };
+
+  const inputOperator = (nextOperator) => {
+    const inputValue = parseFloat(display);
+
+    if (operator && waitingForSecondNumber) {
+      setOperator(nextOperator);
+      return;
+    }
+
+    if (firstNumber === null) {
+      setFirstNumber(inputValue);
+    } else if (operator) {
+      const result = calculate(firstNumber, inputValue, operator);
+
+      setDisplay(String(result));
+      setFirstNumber(result);
+    }
+
+    setWaitingForSecondNumber(true);
+    setOperator(nextOperator);
+  };
+
+  const calculate = (first, second, operator) => {
+    switch (operator) {
+      case "+":
+        return first + second;
+
+      case "-":
+        return first - second;
+
+      case "*":
+        return first * second;
+
+      case "/":
+        return second === 0 ? "Error" : first / second;
+
+      default:
+        return second;
+    }
+  };
+
+  const handleEquals = () => {
+    if (operator === null || firstNumber === null) {
+      return;
+    }
+
+    const secondNumber = parseFloat(display);
+    const result = calculate(firstNumber, secondNumber, operator);
+
+    setDisplay(String(result));
+    setFirstNumber(null);
+    setOperator(null);
+    setWaitingForSecondNumber(true);
+  };
+
+  const clearCalculator = () => {
+    setDisplay("0");
+    setFirstNumber(null);
+    setOperator(null);
+    setWaitingForSecondNumber(false);
+  };
+
+  const handleDecimal = () => {
+    if (waitingForSecondNumber) {
+      setDisplay("0.");
+      setWaitingForSecondNumber(false);
+      return;
+    }
+
+    if (!display.includes(".")) {
+      setDisplay(display + ".");
+    }
+  };
+
+  return (
+    <div className="calculator">
+      <div className="display">{display}</div>
+
+      <div className="buttons">
+        <button className="clear" onClick={clearCalculator}>
+          C
+        </button>
+
+        <button onClick={() => inputOperator("/")}>÷</button>
+        <button onClick={() => inputOperator("*")}>×</button>
+
+        <button onClick={() => inputNumber("7")}>7</button>
+        <button onClick={() => inputNumber("8")}>8</button>
+        <button onClick={() => inputNumber("9")}>9</button>
+        <button onClick={() => inputOperator("-")}>−</button>
+
+        <button onClick={() => inputNumber("4")}>4</button>
+        <button onClick={() => inputNumber("5")}>5</button>
+        <button onClick={() => inputNumber("6")}>6</button>
+        <button onClick={() => inputOperator("+")}>+</button>
+
+        <button onClick={() => inputNumber("1")}>1</button>
+        <button onClick={() => inputNumber("2")}>2</button>
+        <button onClick={() => inputNumber("3")}>3</button>
+
+        <button className="equals" onClick={handleEquals}>
+          =
+        </button>
+
+        <button className="zero" onClick={() => inputNumber("0")}>
+          0
+        </button>
+
+        <button onClick={handleDecimal}>.</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
