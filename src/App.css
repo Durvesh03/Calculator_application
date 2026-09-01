@@ -2,6 +2,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --number-default: #E5E7EB;
+  --number-hover: #D1D5DB;
+  --number-active: #9CA3AF;
+  --number-foreground: #111827;
+  --operator-default: #0F766E;
+  --operator-hover: #115E59;
+  --operator-active: #134E4A;
+  --operator-foreground: #FFFFFF;
+  --clear-default: #B91C1C;
+  --clear-hover: #991B1B;
+  --clear-active: #7F1D1D;
+  --clear-foreground: #FFFFFF;
+  --equals-default: #1D4ED8;
+  --equals-hover: #1E40AF;
+  --equals-active: #1E3A8A;
+  --equals-foreground: #FFFFFF;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -42,8 +61,61 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  opacity: 0.8;
+.number {
+  background-color: var(--number-default);
+  color: var(--number-foreground);
+}
+
+.operator {
+  background-color: var(--operator-default);
+  color: var(--operator-foreground);
+}
+
+.clear {
+  background-color: var(--clear-default);
+  color: var(--clear-foreground);
+}
+
+.equals {
+  background-color: var(--equals-default);
+  color: var(--equals-foreground);
+}
+
+.number:hover {
+  background-color: var(--number-hover);
+}
+
+.operator:hover {
+  background-color: var(--operator-hover);
+}
+
+.clear:hover {
+  background-color: var(--clear-hover);
+}
+
+.equals:hover {
+  background-color: var(--equals-hover);
+}
+
+.number:active {
+  background-color: var(--number-active);
+}
+
+.operator:active {
+  background-color: var(--operator-active);
+}
+
+.clear:active {
+  background-color: var(--clear-active);
+}
+
+.equals:active {
+  background-color: var(--equals-active);
+}
+
+button:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 3px;
 }
 
 .clear {
