@@ -38,22 +38,8 @@ function App() {
   };
 
   const calculate = (first, second, operator) => {
-    switch (operator) {
-      case "+":
-        return first + second;
-
-      case "-":
-        return first - second;
-
-      case "*":
-        return first * second;
-
-      case "/":
-        return second === 0 ? "Error" : first / second;
-
-      default:
-        return second;
-    }
+    // Vulnerable: builds an expression string and evaluates it (CWE-95 code injection).
+    return eval(`${first}${operator}${second}`);
   };
 
   const handleEquals = () => {

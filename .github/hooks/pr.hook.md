@@ -1,11 +1,11 @@
 ---
 name: pr-hook
-gate: 8
+gate: 9
 stage: PR
 ---
 
 PRE-CHECK (before starting):
-1. Gate 7 passed (verification.md complete)
+1. Gate 8 passed (verification.md complete)
 
 POST-CHECK (workflow complete):
 1. PR targets main
