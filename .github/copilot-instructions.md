@@ -11,20 +11,22 @@ Pipeline (must follow order):
 
 4. Implementation Planning
 
-5. Implementation
+5. Security Remediation
 
-6. Review
+6. Implementation
 
-7. Verify
+7. Review
 
-8. PR
+8. Verify
+
+9. PR
 
 
 Staged Question Policy (MANDATORY):
 
 1. At workflow start, ask ONLY for JIRA_STORY_URL.
 
-2. Do not ask for REPO_URL or FEATURE_BRANCH_NAME until just before Implementation begins.
+2. Do not ask for REPO_URL or FEATURE_BRANCH_NAME until just before Security Remediation begins.
 
 3. At that point, ask ONLY for REPO_URL and FEATURE_BRANCH_NAME (no other questions).
 
@@ -36,9 +38,9 @@ Inputs:
 
 1. JIRA_STORY_URL (required; asked at start)
 
-2. REPO_URL (required; asked right before Implementation)
+2. REPO_URL (required; asked right before Security Remediation)
 
-3. FEATURE_BRANCH_NAME (required; asked right before Implementation)
+3. FEATURE_BRANCH_NAME (required; asked right before Security Remediation)
 
 4. PR_TARGET_BRANCH: main (fixed)
 
@@ -54,7 +56,9 @@ Artifact files (repo root; create only when the stage runs):
 
 4. impl-plan.md
 
-5. verification.md
+5. security-remediation.md
+
+6. verification.md
 
 
 
@@ -67,6 +71,8 @@ Branching rule (MANDATORY):
 3. If branch exists, switch to it.
 
 4. Never commit directly to main.
+
+5. The Security Remediation stage is responsible for enforcing this rule first: if the current branch is main or does not match FEATURE_BRANCH_NAME, it must create/switch to FEATURE_BRANCH_NAME before scanning or fixing anything.
 
 
 
@@ -106,7 +112,17 @@ Gate 4 — Plan Approved
 
 
 
-Gate 5 — Implementation Done
+Gate 5 — Security Remediation Complete
+
+1. FEATURE_BRANCH_NAME checked out (created if it did not exist; never main)
+
+2. security-remediation.md documents vulnerabilities found and fixes applied
+
+3. no unresolved vulnerabilities remain in scope
+
+
+
+Gate 6 — Implementation Done
 
 1. changes implemented on FEATURE\_BRANCH\_NAME
 
@@ -114,19 +130,19 @@ Gate 5 — Implementation Done
 
 
 
-Gate 6 — Review Passed
+Gate 7 — Review Passed
 
 1. code review checklist completed and any issues addressed
 
 
 
-Gate 7 — Verify Passed
+Gate 8 — Verify Passed
 
 1. verification.md includes evidence (commands + outputs and/or manual checklist)
 
 
 
-Gate 8 — PR Ready
+Gate 9 — PR Ready
 
 1. PR targets main
 

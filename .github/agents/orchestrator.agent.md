@@ -18,7 +18,7 @@ Staged Question Policy:
 
 1. Start: ask only for JIRA_STORY_URL.
 
-2. Before sdlc-implementation agent flow starts only: ask only for REPO_URL + FEATURE_BRANCH_NAME.
+2. Before sdlc-security-remediation agent flow starts only: ask only for REPO_URL + FEATURE_BRANCH_NAME.
 
 
 
@@ -48,9 +48,9 @@ Before starting a stage and before advancing past it, read the matching gate hoo
 .github/hooks/<stage>.hook.md
 ```
 
-e.g. requirements.hook.md, architecture.hook.md, design-review.hook.md, impl-plan.hook.md, implementation.hook.md, code-review.hook.md, verify.hook.md, pr.hook.md
+e.g. requirements.hook.md, architecture.hook.md, design-review.hook.md, impl-plan.hook.md, security-remediation.hook.md, implementation.hook.md, code-review.hook.md, verify.hook.md, pr.hook.md
 
 GUARDRAILS:
 
 1. Never skip a gate or proceed to the next stage while a gate is FAIL.
-2. Never ask for REPO_URL or FEATURE_BRANCH_NAME before Stage 5 (Implementation).
+2. Never ask for REPO_URL or FEATURE_BRANCH_NAME before Stage 5 (Security Remediation).

@@ -1,11 +1,11 @@
 ---
 name: implementation-hook
-gate: 5
+gate: 6
 stage: Implementation
 ---
 
 PRE-CHECK (before starting):
-1. impl-plan.md exists and Gate 4 passed
+1. security-remediation.md exists and Gate 5 passed
 2. REPO_URL and FEATURE_BRANCH_NAME provided
 3. FEATURE_BRANCH_NAME checked out (never main)
 

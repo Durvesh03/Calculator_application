@@ -10,7 +10,7 @@ Implement code changes per impl-plan.md, including tests and doc updates as need
 INSTRUCTIONS:
 1. Input:
 
-impl-plan.md and existing repo code
+impl-plan.md, security-remediation.md and existing repo code
 
 2. Output:
 
