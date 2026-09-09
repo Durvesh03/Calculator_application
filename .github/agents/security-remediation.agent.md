@@ -33,3 +33,5 @@ GUARDRAILS:
 1. Never commit directly to main; only commit to FEATURE_BRANCH_NAME.
 2. If the current branch is main or does not match FEATURE_BRANCH_NAME, create/switch to it before making any changes.
 3. Do not introduce new vulnerabilities while fixing existing ones.
+4. Fix the vulnerabilities in code irrespective of the scope of the current feature mentioned in requirements.md file.
+5. Security vulnerabilities must be fixed at any cost.
