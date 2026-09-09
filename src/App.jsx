@@ -95,18 +95,18 @@ function App() {
           C
         </button>
 
-        <button onClick={() => inputOperator("/")}>÷</button>
-        <button onClick={() => inputOperator("*")}>×</button>
+        <button className="operator" onClick={() => inputOperator("/")}>÷</button>
+        <button className="operator" onClick={() => inputOperator("*")}>×</button>
 
         <button onClick={() => inputNumber("7")}>7</button>
         <button onClick={() => inputNumber("8")}>8</button>
         <button onClick={() => inputNumber("9")}>9</button>
-        <button onClick={() => inputOperator("-")}>−</button>
+        <button className="operator" onClick={() => inputOperator("-")}>−</button>
 
         <button onClick={() => inputNumber("4")}>4</button>
         <button onClick={() => inputNumber("5")}>5</button>
         <button onClick={() => inputNumber("6")}>6</button>
-        <button onClick={() => inputOperator("+")}>+</button>
+        <button className="operator" onClick={() => inputOperator("+")}>+</button>
 
         <button onClick={() => inputNumber("1")}>1</button>
         <button onClick={() => inputNumber("2")}>2</button>
