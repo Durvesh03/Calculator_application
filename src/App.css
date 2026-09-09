@@ -14,6 +14,14 @@ body {
   padding: 20px;
   background: #222;
   border-radius: 15px;
+  --color-number-bg: #3a3a3c;
+  --color-number-text: #f5f5f5;
+  --color-operator-bg: #ff9f0a;
+  --color-operator-text: #1a1a1a;
+  --color-equals-bg: #0066cc;
+  --color-equals-text: #ffffff;
+  --color-clear-bg: #d32f2f;
+  --color-clear-text: #ffffff;
 }
 
 .display {
@@ -46,12 +54,26 @@ button:hover {
   opacity: 0.8;
 }
 
+.number {
+  background: var(--color-number-bg);
+  color: var(--color-number-text);
+}
+
+.operator {
+  background: var(--color-operator-bg);
+  color: var(--color-operator-text);
+}
+
 .clear {
   grid-column: span 2;
+  background: var(--color-clear-bg);
+  color: var(--color-clear-text);
 }
 
 .equals {
   grid-row: span 2;
+  background: var(--color-equals-bg);
+  color: var(--color-equals-text);
 }
 
 .zero {
