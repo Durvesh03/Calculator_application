@@ -84,32 +84,32 @@ function App() {
           C
         </button>
 
-        <button onClick={() => inputOperator("/")}>÷</button>
-        <button onClick={() => inputOperator("*")}>×</button>
+        <button className="operator" onClick={() => inputOperator("/")}>÷</button>
+        <button className="operator" onClick={() => inputOperator("*")}>×</button>
 
-        <button onClick={() => inputNumber("7")}>7</button>
-        <button onClick={() => inputNumber("8")}>8</button>
-        <button onClick={() => inputNumber("9")}>9</button>
-        <button onClick={() => inputOperator("-")}>−</button>
+        <button className="number" onClick={() => inputNumber("7")}>7</button>
+        <button className="number" onClick={() => inputNumber("8")}>8</button>
+        <button className="number" onClick={() => inputNumber("9")}>9</button>
+        <button className="operator" onClick={() => inputOperator("-")}>−</button>
 
-        <button onClick={() => inputNumber("4")}>4</button>
-        <button onClick={() => inputNumber("5")}>5</button>
-        <button onClick={() => inputNumber("6")}>6</button>
-        <button onClick={() => inputOperator("+")}>+</button>
+        <button className="number" onClick={() => inputNumber("4")}>4</button>
+        <button className="number" onClick={() => inputNumber("5")}>5</button>
+        <button className="number" onClick={() => inputNumber("6")}>6</button>
+        <button className="operator" onClick={() => inputOperator("+")}>+</button>
 
-        <button onClick={() => inputNumber("1")}>1</button>
-        <button onClick={() => inputNumber("2")}>2</button>
-        <button onClick={() => inputNumber("3")}>3</button>
+        <button className="number" onClick={() => inputNumber("1")}>1</button>
+        <button className="number" onClick={() => inputNumber("2")}>2</button>
+        <button className="number" onClick={() => inputNumber("3")}>3</button>
 
         <button className="equals" onClick={handleEquals}>
           =
         </button>
 
-        <button className="zero" onClick={() => inputNumber("0")}>
+        <button className="number zero" onClick={() => inputNumber("0")}>
           0
         </button>
 
-        <button onClick={handleDecimal}>.</button>
+        <button className="number" onClick={handleDecimal}>.</button>
       </div>
     </div>
   );
