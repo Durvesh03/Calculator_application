@@ -1,3 +1,37 @@
+:root {
+  /* Digit / decimal category colors (neutral gray), per architecture.md D3/D6. */
+  --color-digit-bg: #4d4d4d;
+  --color-digit-bg-hover: #5c5c5c;
+  --color-digit-bg-focus: #5c5c5c;
+  --color-digit-bg-active: #333333;
+  --color-digit-text: #ffffff;
+
+  /* Operator category colors (amber/orange). */
+  --color-operator-bg: #b34700;
+  --color-operator-bg-hover: #9c3d00;
+  --color-operator-bg-focus: #9c3d00;
+  --color-operator-bg-active: #7a3000;
+  --color-operator-text: #ffffff;
+
+  /* Clear category color (red). */
+  --color-clear-bg: #c62828;
+  --color-clear-bg-hover: #ad2020;
+  --color-clear-bg-focus: #ad2020;
+  --color-clear-bg-active: #8c1a1a;
+  --color-clear-text: #ffffff;
+
+  /* Equals category color (blue accent), distinct from the other three categories. */
+  --color-equals-bg: #1565c0;
+  --color-equals-bg-hover: #0d47a1;
+  --color-equals-bg-focus: #0d47a1;
+  --color-equals-bg-active: #08306b;
+  --color-equals-text: #ffffff;
+
+  /* Shared focus-visible outline color: bright enough to stand out against every
+     category background above and against the dark .calculator/.display card. */
+  --color-focus-outline: #ffd54f;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -46,12 +80,89 @@ button:hover {
   opacity: 0.8;
 }
 
+.digit {
+  background-color: var(--color-digit-bg);
+  color: var(--color-digit-text);
+}
+
+.digit:hover {
+  background-color: var(--color-digit-bg-hover);
+}
+
+.digit:focus-visible,
+.operator:focus-visible,
+.clear:focus-visible,
+.equals:focus-visible {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 2px;
+}
+
+.digit:active,
+.operator:active,
+.clear:active,
+.equals:active {
+  transform: scale(0.97);
+}
+
+.digit:focus-visible {
+  background-color: var(--color-digit-bg-focus);
+}
+
+.digit:active {
+  background-color: var(--color-digit-bg-active);
+}
+
+.operator {
+  background-color: var(--color-operator-bg);
+  color: var(--color-operator-text);
+}
+
+.operator:hover {
+  background-color: var(--color-operator-bg-hover);
+}
+
+.operator:focus-visible {
+  background-color: var(--color-operator-bg-focus);
+}
+
+.operator:active {
+  background-color: var(--color-operator-bg-active);
+}
+
 .clear {
   grid-column: span 2;
+  background-color: var(--color-clear-bg);
+  color: var(--color-clear-text);
+}
+
+.clear:hover {
+  background-color: var(--color-clear-bg-hover);
+}
+
+.clear:focus-visible {
+  background-color: var(--color-clear-bg-focus);
+}
+
+.clear:active {
+  background-color: var(--color-clear-bg-active);
 }
 
 .equals {
   grid-row: span 2;
+  background-color: var(--color-equals-bg);
+  color: var(--color-equals-text);
+}
+
+.equals:hover {
+  background-color: var(--color-equals-bg-hover);
+}
+
+.equals:focus-visible {
+  background-color: var(--color-equals-bg-focus);
+}
+
+.equals:active {
+  background-color: var(--color-equals-bg-active);
 }
 
 .zero {
