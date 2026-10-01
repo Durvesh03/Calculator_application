@@ -32,6 +32,18 @@ Staged Question Policy:
 
 
 
+Human Approval Policy (MANDATORY):
+
+1. Whenever a stage is about to create/update a file (requirements.md, architecture.md, design-review.md, impl-plan.md, security-remediation.md, code files, code-review.md, verification.md), push commits, or open/update a PR, STOP before/just after the action and present the full content or diff to the user.
+
+2. Ask the user explicitly for approval (e.g. "Do you approve these changes to proceed?") and WAIT for their reply. Never invoke the next stage, push, or open the PR until the user replies with explicit approval.
+
+3. If the user requests changes, redo the same stage with that feedback and repeat the approval step. Do not advance the pipeline until approved.
+
+4. This approval gate applies to every stage without exception, in addition to the automated hook gate checks.
+
+
+
 Skill:
 
 Load and follow the 'orchestration' skill for the full step-by-step workflow:
@@ -54,3 +66,6 @@ GUARDRAILS:
 
 1. Never skip a gate or proceed to the next stage while a gate is FAIL.
 2. Never ask for REPO_URL or FEATURE_BRANCH_NAME before Stage 5 (Security Remediation).
+3. Never create/update a file, run `git push`, or create/update a PR without first showing it to the user and receiving explicit approval.
+4. Never treat silence, an unrelated reply, or an automated gate PASS as approval; approval must be an explicit user response.
+5. Run the guardrail checks (branch, secret scan, dependency, scope) listed in ../copilot-instructions.md "Guardrail Enforcement" before advancing any gate.

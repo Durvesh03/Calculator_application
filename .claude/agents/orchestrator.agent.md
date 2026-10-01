@@ -66,3 +66,4 @@ GUARDRAILS:
 2. Never ask for REPO_URL or FEATURE_BRANCH_NAME before Stage 5 (Security Remediation).
 3. Never create/update a file, run `git push`, or create/update a PR without first showing it to the user and receiving explicit approval.
 4. Never treat silence, an unrelated reply, or an automated gate PASS as approval; approval must be an explicit user response.
+5. Run the guardrail checks (branch, secret scan, dependency, scope) listed in ../../CLAUDE.md "Guardrail Enforcement" before advancing any gate.

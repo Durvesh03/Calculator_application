@@ -20,7 +20,7 @@ HUMAN APPROVAL GATE (applies after EVERY stage below, no exceptions):
 
 4. If the user asks for changes, re-invoke the SAME subagent with that feedback and repeat from step 1. Loop until approved.
 
-5. Only after explicit approval: check the stage's hook file gate, output Pipeline Status (PASS/FAIL + reasons + next action), suggest a commit message, then move to the next stage.
+5. Only after explicit approval: run the guardrail checks from CLAUDE.md "Guardrail Enforcement", check the stage's hook file gate, output Pipeline Status (PASS/FAIL + reasons + next action), suggest a commit message, then move to the next stage.
 
 
 
