@@ -25,6 +25,16 @@ HUMAN APPROVAL GATE (applies after EVERY stage below, no exceptions):
 
 
 
+CONTEXT STRATEGY (Lost in the Middle — applies to every stage handoff):
+
+1. Anchor first and last: every Pipeline Status message starts and ends with "Stage N — <name> (Gate N)" plus the pending approval/question.
+2. One artifact per handoff: pass each stage only the artifact(s)/sections it requires; never forward the full artifact history.
+3. Summarize before carrying forward: when a stage depends on a prior artifact, quote only the needed section (e.g. acceptance criteria), not the file.
+4. Diff-first: once an artifact exists, present diffs (not full contents) at approval gates.
+5. Recency wins: restate the latest user approval/feedback explicitly before each delegation.
+
+
+
 Delegate in order:
 
 1. sdlc-requirements

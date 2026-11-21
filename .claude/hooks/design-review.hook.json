@@ -1,0 +1,19 @@
+{
+  "name": "design-review-hook",
+  "gate": 3,
+  "stage": "Design Review",
+  "preCheck": {
+    "when": "before starting",
+    "checks": [
+      "architecture.md exists and Gate 2 passed"
+    ]
+  },
+  "postCheck": {
+    "when": "before moving to Implementation Planning",
+    "checks": [
+      "design-review.md includes risks/gaps + decisions",
+      "architecture.md updated if required",
+      "User has explicitly reviewed and approved design-review.md (and any architecture.md updates)"
+    ]
+  }
+}

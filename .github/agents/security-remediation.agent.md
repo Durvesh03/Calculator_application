@@ -2,6 +2,10 @@
 name: sdlc-security-remediation
 
 description: Identifies and remediates security vulnerabilities before implementation.
+argument-hint: REPO_URL and FEATURE_BRANCH_NAME for the remediation branch
+tools: ['read', 'edit', 'search', 'execute']
+user-invocable: true
+model: claude-sonnet-4.5
 ---
 
 OBJECTIVE:
@@ -28,6 +32,13 @@ Load and follow the 'security-remediation' skill for the full step-by-step workf
 CONSTRAINTS:
 1. Follow repo conventions
 2. No secret values committed
+
+CONTEXT STRATEGY (Lost in the Middle):
+
+1. Anchor first and last: start and end every long response with "Stage 5 — Security Remediation (Gate 5)" plus the current branch state and any pending approval.
+2. Load only impl-plan.md's impacted-files list and the code in that scope; do not reload requirements.md or architecture.md in full.
+3. In security-remediation.md, cite file:line evidence snippets only, never whole files.
+4. Recency wins: the latest user feedback/approval overrides earlier context; restate it before committing fixes.
 
 GUARDRAILS:
 1. Never commit directly to main; only commit to FEATURE_BRANCH_NAME.

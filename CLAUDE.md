@@ -109,7 +109,7 @@ Branching rule (MANDATORY):
 
 Stage Gates (Hooks):
 
-Each gate's PRE/POST checks are also captured as a standalone gate-check file under `.claude/hooks/<stage>.hook.md`. These are plain documentation gate-checks (not Claude Code's native tool-event hooks) — agents must read the matching file before starting a stage and before advancing to the next one. Every gate-check's POST-CHECK implicitly also requires the applicable guardrail checks above passed.
+Each gate's PRE/POST checks are also captured as a standalone gate-check file under `.claude/hooks/<stage>.hook.json`. These are plain documentation gate-checks (not Claude Code's native tool-event hooks) — agents must read the matching file before starting a stage and before advancing to the next one. Every gate-check's POST-CHECK implicitly also requires the applicable guardrail checks above passed.
 
 Gate 1 — Requirements Complete
 
@@ -241,7 +241,7 @@ When skills, hooks, agents, and instructions conflict, resolve in this order (hi
 
 1. Explicit user instruction in the current turn — always wins.
 
-2. Stage gate-check file (`.claude/hooks/*.hook.md`) — gate-specific PRE/POST checks.
+2. Stage gate-check file (`.claude/hooks/*.hook.json`) — gate-specific PRE/POST checks.
 
 3. Agent definition (`.claude/agents/*.agent.md`) — stage role and objective.
 
@@ -264,6 +264,8 @@ Context Strategy ("Lost in the Middle"):
 3. Summarize before carrying forward: when a stage depends on a prior artifact, quote only the specific section needed (e.g. acceptance criteria), not the entire file.
 
 4. Recency for decisions: the most recent user approval/feedback always takes precedence over earlier context — restate the latest decision explicitly rather than relying on it being "somewhere above".
+
+5. Stage enforcement: every agent file (`.claude/agents/*.agent.md`) and the orchestration skill carry a stage-specific "CONTEXT STRATEGY (Lost in the Middle)" section implementing rules 1–4 (which artifact/sections to load, what to quote, what to anchor) — follow it for that stage.
 
 
 

@@ -2,6 +2,10 @@
 name: sdlc-orchestrator
 
 description: Coordinates SDLC agent pipeline.
+argument-hint: Jira story URL to run the full SDLC pipeline
+tools: ['read', 'edit', 'search', 'execute', 'agent']
+user-invocable: true
+model: claude-sonnet-4.5
 ---
 
 
@@ -57,10 +61,17 @@ Hooks:
 Before starting a stage and before advancing past it, read the matching gate hook file:
 
 ```
-.github/hooks/<stage>.hook.md
+.github/hooks/<stage>.hook.json
 ```
 
-e.g. requirements.hook.md, architecture.hook.md, design-review.hook.md, impl-plan.hook.md, security-remediation.hook.md, implementation.hook.md, code-review.hook.md, verify.hook.md, pr.hook.md
+e.g. requirements.hook.json, architecture.hook.json, design-review.hook.json, impl-plan.hook.json, security-remediation.hook.json, implementation.hook.json, code-review.hook.json, verify.hook.json, pr.hook.json
+
+CONTEXT STRATEGY (Lost in the Middle):
+
+1. Anchor first and last: start and end every pipeline status message with "Stage N — <name> (Gate N)" plus the pending approval/question.
+2. One artifact at a time: pass each subagent only the artifact(s)/sections its stage needs (per that stage's agent file), never the whole artifact history.
+3. Diff-first approvals: once a file exists, show diffs rather than full contents when asking for approval.
+4. Recency wins: the latest explicit user approval/feedback overrides anything earlier; restate it before invoking the next stage.
 
 GUARDRAILS:
 

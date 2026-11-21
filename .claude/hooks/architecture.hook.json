@@ -1,0 +1,19 @@
+{
+  "name": "architecture-hook",
+  "gate": 2,
+  "stage": "Architecture",
+  "preCheck": {
+    "when": "before starting",
+    "checks": [
+      "requirements.md exists and Gate 1 passed"
+    ]
+  },
+  "postCheck": {
+    "when": "before moving to Design Review",
+    "checks": [
+      "architecture.md identifies impacted components/files",
+      "Includes approach for styling/structure and a11y considerations for UI work",
+      "User has explicitly reviewed and approved architecture.md (Human Approval Policy, CLAUDE.md)"
+    ]
+  }
+}

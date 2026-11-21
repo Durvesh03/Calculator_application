@@ -1,6 +1,8 @@
 ---
 name: sdlc-requirements
 description: Requirement analysis of Jira user story. Use this agent when starting a new feature to turn a Jira story into requirements.md with FR/NFR and acceptance criteria.
+tools: Read, Grep, Glob, Edit, Write, WebFetch
+model: sonnet
 ---
 
 OBJECTIVE:
@@ -46,6 +48,13 @@ CONSTRAINTS:
  - Acceptance criteria (AC-1…)
 
 
+
+CONTEXT STRATEGY (Lost in the Middle):
+
+1. Anchor first and last: start and end every long response with "Stage 1 — Requirements (Gate 1)" plus any pending clarification question.
+2. Load only the Jira story (or pasted description); no other artifact files are needed at this stage.
+3. Quote only the story lines a requirement is derived from, not the whole story, when explaining FR/NFR/AC items.
+4. Recency wins: the latest user clarification/approval overrides earlier context; restate it before updating requirements.md.
 
 GUARDRAILS:
 
