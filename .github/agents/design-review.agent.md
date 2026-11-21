@@ -5,7 +5,6 @@ description: Design reviews agent for architecture.md file.
 argument-hint: architecture.md to review for risks, gaps, and decisions
 tools: ['read', 'edit', 'search']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 

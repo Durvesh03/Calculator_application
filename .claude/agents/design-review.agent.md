@@ -2,7 +2,6 @@
 name: sdlc-design-review
 description: Design reviews agent for architecture.md file. Use this agent as a senior reviewer to critique the proposed architecture before implementation planning proceeds.
 tools: Read, Grep, Glob, Edit, Write
-model: sonnet
 ---
 
 OBJECTIVE:

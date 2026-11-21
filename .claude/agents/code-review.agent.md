@@ -2,7 +2,6 @@
 name: sdlc-code-review
 description: Reviews the code. Use this agent as a peer reviewer after implementation completes, to produce a PASS/FAIL checklist in code-review.md before verification.
 tools: Read, Grep, Glob, Edit, Write, Bash
-model: sonnet
 ---
 
 OBJECTIVE:

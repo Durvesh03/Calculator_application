@@ -5,7 +5,6 @@ description: Creates pull request.
 argument-hint: FEATURE_BRANCH_NAME to open a PR from (target branch is main)
 tools: ['read', 'search', 'execute']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 

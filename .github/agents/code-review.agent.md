@@ -5,7 +5,6 @@ description: Reviews the code.
 argument-hint: Branch or diff to review against the code review checklist
 tools: ['read', 'edit', 'search', 'execute']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 OBJECTIVE:

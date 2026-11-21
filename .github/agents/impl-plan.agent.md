@@ -5,7 +5,6 @@ description: Implementation planning agent.
 argument-hint: Approved architecture.md to break into a dependency-ordered plan
 tools: ['read', 'edit', 'search']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 OBJECTIVE:

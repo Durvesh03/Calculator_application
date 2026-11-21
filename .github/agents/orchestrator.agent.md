@@ -5,7 +5,6 @@ description: Coordinates SDLC agent pipeline.
 argument-hint: Jira story URL to run the full SDLC pipeline
 tools: ['read', 'edit', 'search', 'execute', 'agent']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 

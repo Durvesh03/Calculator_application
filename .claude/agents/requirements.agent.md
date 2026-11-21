@@ -2,7 +2,6 @@
 name: sdlc-requirements
 description: Requirement analysis of Jira user story. Use this agent when starting a new feature to turn a Jira story into requirements.md with FR/NFR and acceptance criteria.
 tools: Read, Grep, Glob, Edit, Write, WebFetch
-model: sonnet
 ---
 
 OBJECTIVE:

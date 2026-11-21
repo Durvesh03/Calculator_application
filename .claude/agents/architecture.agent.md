@@ -2,7 +2,6 @@
 name: sdlc-architecture
 description: Proposes a high-level architecture satisfying requirements.md. Use this agent after requirements are approved to design the solution before implementation planning.
 tools: Read, Grep, Glob, Edit, Write
-model: sonnet
 ---
 
 OBJECTIVE:

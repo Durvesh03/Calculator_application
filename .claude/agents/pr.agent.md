@@ -2,7 +2,6 @@
 name: sdlc-pr
 description: Creates pull request. Use this agent as the final stage once verification.md is complete, to open a PR against main with the full description.
 tools: Read, Grep, Glob, Edit, Write, Bash
-model: sonnet
 ---
 
 OBJECTIVE:

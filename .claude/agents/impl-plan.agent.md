@@ -2,7 +2,6 @@
 name: sdlc-impl-plan
 description: Implementation planning agent. Use this agent to break an approved architecture into a dependency-ordered task list before security remediation and implementation begin.
 tools: Read, Grep, Glob, Edit, Write
-model: sonnet
 ---
 
 OBJECTIVE:

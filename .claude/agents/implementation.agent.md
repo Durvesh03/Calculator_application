@@ -2,7 +2,6 @@
 name: sdlc-implementation
 description: Implements code changes per impl-plan.md. Use this agent after security remediation completes to write the actual feature code, tests, and doc updates on FEATURE_BRANCH_NAME.
 tools: Read, Grep, Glob, Edit, Write, Bash
-model: sonnet
 ---
 
 OBJECTIVE:

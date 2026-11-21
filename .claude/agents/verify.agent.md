@@ -2,7 +2,6 @@
 name: sdlc-verify
 description: Runs verification per impl-plan.md and code-review.md findings. Use this agent after code review issues are addressed, to generate verification.md with command evidence before the PR is created.
 tools: Read, Grep, Glob, Edit, Write, Bash, mcp__playwright
-model: sonnet
 ---
 
 OBJECTIVE:

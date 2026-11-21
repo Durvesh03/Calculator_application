@@ -5,7 +5,6 @@ description: Implements code changes per impl-plan.md.
 argument-hint: impl-plan.md tasks to implement on FEATURE_BRANCH_NAME
 tools: ['read', 'edit', 'search', 'execute']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 OBJECTIVE:

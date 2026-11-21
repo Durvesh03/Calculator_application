@@ -2,7 +2,6 @@
 name: sdlc-orchestrator
 description: Coordinates SDLC agent pipeline. Use this agent to run or resume the full Requirements-to-PR workflow, delegating to the specialist sdlc-* subagents in order and enforcing stage gates.
 tools: Read, Grep, Glob, Edit, Write, Bash, Task
-model: sonnet
 ---
 
 OBJECTIVE:

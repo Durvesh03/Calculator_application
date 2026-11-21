@@ -5,7 +5,6 @@ description: Requirement analysis of Jira user story.
 argument-hint: Jira story URL (or pasted story description + acceptance criteria)
 tools: ['read', 'edit', 'search', 'web']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 

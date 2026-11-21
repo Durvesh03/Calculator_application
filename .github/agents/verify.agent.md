@@ -5,7 +5,6 @@ description: Implements code changes per impl-plan.md.
 argument-hint: Changes/branch to verify; evidence is written to verification.md
 tools: ['read', 'edit', 'search', 'execute', 'playwright/*']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 

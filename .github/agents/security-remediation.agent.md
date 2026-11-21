@@ -5,7 +5,6 @@ description: Identifies and remediates security vulnerabilities before implement
 argument-hint: REPO_URL and FEATURE_BRANCH_NAME for the remediation branch
 tools: ['read', 'edit', 'search', 'execute']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 OBJECTIVE:

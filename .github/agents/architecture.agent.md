@@ -5,7 +5,6 @@ description: Proposes a high-level architecture satisfying requirements.md.
 argument-hint: Approved requirements.md to design the architecture from
 tools: ['read', 'edit', 'search']
 user-invocable: true
-model: claude-sonnet-4.5
 ---
 
 OBJECTIVE:

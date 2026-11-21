@@ -2,7 +2,6 @@
 name: sdlc-security-remediation
 description: Identifies and remediates security vulnerabilities before implementation. Use this agent right after REPO_URL/FEATURE_BRANCH_NAME are collected, before any feature implementation begins.
 tools: Read, Grep, Glob, Edit, Write, Bash
-model: sonnet
 ---
 
 OBJECTIVE:
