@@ -1,0 +1,19 @@
+{
+  "name": "requirements-hook",
+  "gate": 1,
+  "stage": "Requirements",
+  "preCheck": {
+    "when": "before starting",
+    "checks": [
+      "JIRA_STORY_URL provided by user"
+    ]
+  },
+  "postCheck": {
+    "when": "before moving to Architecture",
+    "checks": [
+      "requirements.md includes: scope, FR/NFR, acceptance criteria",
+      "Open questions resolved or explicitly deferred",
+      "User has explicitly reviewed and approved requirements.md (Human Approval Policy, CLAUDE.md)"
+    ]
+  }
+}

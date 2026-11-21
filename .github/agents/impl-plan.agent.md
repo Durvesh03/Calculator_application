@@ -2,6 +2,10 @@
 name: sdlc-impl-plan
 
 description: Implementation planning agent.
+argument-hint: Approved architecture.md to break into a dependency-ordered plan
+tools: ['read', 'edit', 'search']
+user-invocable: true
+model: claude-sonnet-4.5
 ---
 
 OBJECTIVE:
@@ -23,6 +27,13 @@ Write impl-plan.md with:
 3. Suggested commit breakdown
 4. Verification approach (what to run / what to manually validate)
 5. Blockers/assumptions
+
+CONTEXT STRATEGY (Lost in the Middle):
+
+1. Anchor first and last: start and end every long response with "Stage 4 — Implementation Planning (Gate 4)" plus any pending question.
+2. Load only architecture.md (component list / impacted files) and the Decisions/Action items section of design-review.md; do not reload requirements.md in full.
+3. Quote only the component or decision a task (T-n) maps to, not full artifacts.
+4. Recency wins: the latest user feedback/approval overrides earlier context; restate it before updating impl-plan.md.
 
 GUARDRAILS:
 

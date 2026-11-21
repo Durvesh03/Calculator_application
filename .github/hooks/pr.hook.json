@@ -1,0 +1,18 @@
+{
+  "name": "pr-hook",
+  "gate": 9,
+  "stage": "PR",
+  "preCheck": {
+    "when": "before starting",
+    "checks": [
+      "Gate 8 passed (verification.md complete)"
+    ]
+  },
+  "postCheck": {
+    "when": "workflow complete",
+    "checks": [
+      "PR targets main",
+      "PR description includes Summary, Changes, Evidence, Limitations, Reviewer Checklist"
+    ]
+  }
+}

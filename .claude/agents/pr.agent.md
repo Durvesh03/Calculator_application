@@ -1,6 +1,8 @@
 ---
 name: sdlc-pr
 description: Creates pull request. Use this agent as the final stage once verification.md is complete, to open a PR against main with the full description.
+tools: Read, Grep, Glob, Edit, Write, Bash
+model: sonnet
 ---
 
 OBJECTIVE:
@@ -29,6 +31,13 @@ PR description sections:
 CONSTRAINTS:
 
 All of the PR description sections must be generated.
+
+CONTEXT STRATEGY (Lost in the Middle):
+
+1. Anchor first and last: start and end every long response with "Stage 9 — PR (Gate 9)" plus the pending approval state before PR creation.
+2. Load only verification.md results and the branch diff/commit list; do not reload earlier artifacts in full.
+3. Summarize evidence in the PR description with key snippets/links, not full logs or artifact files.
+4. Recency wins: the latest user feedback/approval overrides earlier context; restate it before creating the PR.
 
 GUARDRAILS:
 

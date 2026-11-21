@@ -1,0 +1,20 @@
+{
+  "name": "implementation-hook",
+  "gate": 6,
+  "stage": "Implementation",
+  "preCheck": {
+    "when": "before starting",
+    "checks": [
+      "security-remediation.md exists and Gate 5 passed",
+      "REPO_URL and FEATURE_BRANCH_NAME provided",
+      "FEATURE_BRANCH_NAME checked out (never main)"
+    ]
+  },
+  "postCheck": {
+    "when": "before moving to Review",
+    "checks": [
+      "Changes implemented on FEATURE_BRANCH_NAME",
+      "Available build/test/lint scripts run if present; otherwise documented as skipped"
+    ]
+  }
+}

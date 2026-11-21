@@ -1,6 +1,8 @@
 ---
 name: sdlc-architecture
 description: Proposes a high-level architecture satisfying requirements.md. Use this agent after requirements are approved to design the solution before implementation planning.
+tools: Read, Grep, Glob, Edit, Write
+model: sonnet
 ---
 
 OBJECTIVE:
@@ -37,6 +39,13 @@ CONSTRAINTS:
   - Assumptions/constraints
 
 
+
+CONTEXT STRATEGY (Lost in the Middle):
+
+1. Anchor first and last: start and end every long response with "Stage 2 — Architecture (Gate 2)" plus any pending recommendation question.
+2. Load only requirements.md; do not reload the Jira story or any other artifact.
+3. Quote only the FR/NFR/AC IDs a design decision addresses, not the full requirements.md.
+4. Recency wins: the latest user feedback/approval overrides earlier context; restate it before updating architecture.md.
 
 GUARDRAILS:
 

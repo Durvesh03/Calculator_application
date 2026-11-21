@@ -1,0 +1,19 @@
+{
+  "name": "impl-plan-hook",
+  "gate": 4,
+  "stage": "Implementation Planning",
+  "preCheck": {
+    "when": "before starting",
+    "checks": [
+      "design-review.md exists and Gate 3 passed"
+    ]
+  },
+  "postCheck": {
+    "when": "before moving to Implementation",
+    "checks": [
+      "impl-plan.md is dependency ordered",
+      "impl-plan.md includes a verification approach",
+      "User has explicitly reviewed and approved impl-plan.md"
+    ]
+  }
+}

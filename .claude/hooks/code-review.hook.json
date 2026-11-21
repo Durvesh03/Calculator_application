@@ -1,0 +1,19 @@
+{
+  "name": "code-review-hook",
+  "gate": 7,
+  "stage": "Review",
+  "preCheck": {
+    "when": "before starting",
+    "checks": [
+      "Gate 6 passed (implementation complete on FEATURE_BRANCH_NAME)"
+    ]
+  },
+  "postCheck": {
+    "when": "before moving to Verify",
+    "checks": [
+      "Code review checklist completed",
+      "Any issues raised during review addressed",
+      "User has explicitly reviewed and approved code-review.md"
+    ]
+  }
+}

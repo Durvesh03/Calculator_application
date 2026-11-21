@@ -1,0 +1,18 @@
+{
+  "name": "verify-hook",
+  "gate": 8,
+  "stage": "Verify",
+  "preCheck": {
+    "when": "before starting",
+    "checks": [
+      "Gate 7 passed (review issues addressed)"
+    ]
+  },
+  "postCheck": {
+    "when": "before moving to PR",
+    "checks": [
+      "verification.md includes evidence (commands + outputs and/or manual checklist)",
+      "User has explicitly reviewed and approved verification.md"
+    ]
+  }
+}
