@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { calculate } from "./calculator.js";
 
 function App() {
   const [display, setDisplay] = useState("0");
@@ -35,11 +36,6 @@ function App() {
 
     setWaitingForSecondNumber(true);
     setOperator(nextOperator);
-  };
-
-  const calculate = (first, second, operator) => {
-    // Vulnerable: builds an expression string and evaluates it (CWE-95 code injection).
-    return eval(`${first}${operator}${second}`);
   };
 
   const handleEquals = () => {

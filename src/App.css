@@ -1,49 +1,74 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-}
-
 .calculator {
-  width: 320px;
-  margin: 100px auto;
-  padding: 20px;
-  background: #222;
-  border-radius: 15px;
+  width: min(320px, calc(100vw - var(--space-page-gutter)));
+  margin: var(--space-page-top) auto;
+  padding: var(--space-4);
+  background: var(--color-calculator);
+  border-radius: var(--radius-calculator);
 }
 
 .display {
   height: 70px;
-  margin-bottom: 15px;
-  padding: 15px;
-  background: #111;
-  color: white;
-  font-size: 32px;
-  text-align: right;
-  border-radius: 8px;
+  margin-bottom: var(--space-3);
+  padding: var(--space-3);
   overflow: hidden;
+  border-radius: var(--radius-button);
+  background: var(--color-display);
+  color: var(--color-text);
+  font-size: var(--font-display);
+  text-align: right;
 }
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-2);
 }
 
-button {
+.buttons button {
+  min-width: 0;
   height: 60px;
-  border: none;
-  border-radius: 8px;
-  font-size: 22px;
+  border: 0;
+  border-radius: var(--radius-button);
+  background: var(--color-button);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--font-button);
   cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    transform 120ms ease;
 }
 
-button:hover {
-  opacity: 0.8;
+.buttons button:hover {
+  background: var(--color-button-hover);
+}
+
+.buttons button:active {
+  background: var(--color-button-active);
+  transform: scale(0.97);
+}
+
+.buttons button:focus-visible {
+  outline: var(--size-focus-ring) solid var(--color-focus);
+  outline-offset: var(--space-focus-offset);
+  position: relative;
+  z-index: 1;
+}
+
+.buttons .clear,
+.buttons .equals {
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+}
+
+.buttons .clear:hover,
+.buttons .equals:hover {
+  background: var(--color-accent-hover);
+}
+
+.buttons .clear:active,
+.buttons .equals:active {
+  background: var(--color-accent);
 }
 
 .clear {
@@ -56,4 +81,17 @@ button:hover {
 
 .zero {
   grid-column: span 2;
+}
+
+@media (max-width: 360px) {
+  .calculator {
+    margin: var(--space-page-top-small) auto;
+    padding: var(--space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buttons button {
+    transition: none;
+  }
 }
