@@ -15,6 +15,9 @@ Create the Pull Request including the PR description, changelog entry, and revie
 
 INSTRUCTIONS:
 
+ARTIFACT PATHS:
+Follow the Artifact naming and handoff policy in `.github/copilot-instructions.md`. Bare artifact names below are logical roles resolved to the current workflow's exact timestamped paths in `Artifacts/`. Return every created/updated artifact path. Any saved PR description or changelog draft must also use `Artifacts/<artifact-name>_<timestamp>.md`.
+
 Output:
 
 PR description sections:

@@ -24,7 +24,9 @@ Below is the Review Area vs Review question mapping for code review :
 7. Dependency Safety : Does Copilot flag any known-vulnerable package versions? 
 
 
-Produce a checklist with PASS/FAIL and concrete fixes.
+Resolve bare artifact names to the exact current-workflow paths supplied by the caller under the Artifact naming and handoff policy in `.github/copilot-instructions.md`.
+
+Produce a checklist with PASS/FAIL and concrete fixes in `Artifacts/code-review_<timestamp>.md` using local `ddMMYYYYhhmm` creation time; return its exact path and retain it for revisions.
 
 If fixes are needed, specify exact file edits.
 

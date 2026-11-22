@@ -8,6 +8,11 @@ STAGE 0 — Intake:
 
 Ask the user ONLY for JIRA_STORY_URL.
 
+ARTIFACT HANDOFFS:
+
+Follow the Artifact naming and handoff policy in `CLAUDE.md`. All generated documents go in `Artifacts/` with local `ddMMYYYYhhmm` creation timestamps.
+Retain the exact paths returned by each stage and pass only the required current-workflow paths to later agents, approvals, and hook checks. Revisions reuse those paths. Bare artifact names are logical roles, not root filenames; never infer a workflow by choosing the latest filename.
+
 
 
 HUMAN APPROVAL GATE (applies after EVERY stage below, no exceptions):

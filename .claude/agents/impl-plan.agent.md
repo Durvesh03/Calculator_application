@@ -9,11 +9,14 @@ Create a dependency-ordered implementation plan derived from the approved archit
 
 INSTRUCTIONS:
 
+ARTIFACT PATHS:
+Follow the Artifact naming and handoff policy in `CLAUDE.md`. Bare artifact names below are logical roles resolved to the current workflow's exact timestamped paths in `Artifacts/`. Return every created/updated artifact path.
+
 1. Input:
 You will receive architecture.md file. You need to review it to break the approved architecture down into a prioritized, dependency-ordered task list.
 
 2. Output:
-Document the plan in impl-plan.md, ordered by dependency in root repo.
+Document the dependency-ordered plan in `Artifacts/impl-plan_<timestamp>.md` using local `ddMMYYYYhhmm` creation time, or update the exact plan artifact path already assigned to this workflow.
 
 CONSTRAINTS:
 

@@ -5,6 +5,7 @@
   "preCheck": {
     "when": "before starting",
     "checks": [
+      "Apply the Artifact naming and handoff policy in copilot-instructions.md; artifact names denote exact current-workflow paths, not root filenames",
       "impl-plan.md exists and Gate 4 passed",
       "REPO_URL and FEATURE_BRANCH_NAME provided"
     ]
@@ -12,6 +13,7 @@
   "postCheck": {
     "when": "before moving to Implementation",
     "checks": [
+      "Every generated artifact exists in Artifacts/ as <artifact-name>_<ddMMYYYYhhmm>.md; exact paths returned for approval and handoff, with assigned paths retained for revisions",
       "FEATURE_BRANCH_NAME checked out (created if it did not exist; never main) — verified via `git branch --show-current`",
       "security-remediation.md documents identified vulnerabilities and fixes applied",
       "No unresolved vulnerabilities remain in scope",

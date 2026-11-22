@@ -5,6 +5,7 @@
   "preCheck": {
     "when": "before starting",
     "checks": [
+      "Apply the Artifact naming and handoff policy in CLAUDE.md; artifact names denote exact current-workflow paths, not root filenames",
       "Gate 8 passed (verification.md complete)",
       "Draft PR description shown to user and explicitly approved BEFORE the PR is created/updated"
     ]
@@ -12,6 +13,7 @@
   "postCheck": {
     "when": "workflow complete",
     "checks": [
+      "Every generated artifact exists in Artifacts/ as <artifact-name>_<ddMMYYYYhhmm>.md; exact paths returned for approval and handoff, with assigned paths retained for revisions",
       "PR targets main",
       "PR description includes Summary, Changes, Evidence, Limitations, Reviewer Checklist"
     ]

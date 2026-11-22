@@ -9,6 +9,8 @@ description: Implement code changes per impl-plan.md
 
 Inputs provided:
 
+Resolve bare artifact names to the exact current-workflow paths supplied by the caller under the Artifact naming and handoff policy in `.github/copilot-instructions.md`. Any generated artifact uses `Artifacts/<artifact-name>_<timestamp>.md` with local `ddMMYYYYhhmm` creation time; return its exact path and retain it for revisions.
+
 1. REPO_URL
 
 2. FEATURE_BRANCH_NAME

@@ -8,6 +8,9 @@ OBJECTIVE:
 Implement code changes per impl-plan.md, including tests and doc updates as needed.
 
 INSTRUCTIONS:
+ARTIFACT PATHS:
+Follow the Artifact naming and handoff policy in `CLAUDE.md`. Bare artifact names below are logical roles resolved to the current workflow's exact timestamped paths in `Artifacts/`. Return every created/updated artifact path.
+
 1. Input:
 
 impl-plan.md, security-remediation.md and existing repo code

@@ -1,8 +1,10 @@
 ---
-applyTo: "{requirements,architecture,design-review,impl-plan,security-remediation,verification}.md"
+applyTo: "Artifacts/*.md"
 ---
 
 # SDLC artifact file conventions
+
+Follow the Artifact naming and handoff policy in `.github/copilot-instructions.md`: create documents as `Artifacts/<artifact-name>_<timestamp>.md` using local `ddMMYYYYhhmm` creation time, retain exact paths for revisions, and pass those paths between stages.
 
 1. These are the pipeline's task/project memory (see copilot-instructions.md "Memory Types") — keep them accurate and current.
 2. Use numbered lists/tables, not prose duplication of earlier artifacts — quote only the specific section

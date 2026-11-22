@@ -5,12 +5,14 @@
   "preCheck": {
     "when": "before starting",
     "checks": [
+      "Apply the Artifact naming and handoff policy in CLAUDE.md; artifact names denote exact current-workflow paths, not root filenames",
       "Gate 6 passed (implementation complete on FEATURE_BRANCH_NAME)"
     ]
   },
   "postCheck": {
     "when": "before moving to Verify",
     "checks": [
+      "Every generated artifact exists in Artifacts/ as <artifact-name>_<ddMMYYYYhhmm>.md; exact paths returned for approval and handoff, with assigned paths retained for revisions",
       "Code review checklist completed",
       "Any issues raised during review addressed",
       "User has explicitly reviewed and approved code-review.md"
