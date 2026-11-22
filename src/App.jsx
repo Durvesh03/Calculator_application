@@ -38,8 +38,22 @@ function App() {
   };
 
   const calculate = (first, second, operator) => {
-    // Vulnerable: builds an expression string and evaluates it (CWE-95 code injection).
-    return eval(`${first}${operator}${second}`);
+    // Fixed: explicit operator dispatch instead of building/evaluating a string
+    // expression (previously eval(`${first}${operator}${second}`) — CWE-95 code
+    // injection). Numeric semantics (including division-by-zero -> Infinity/NaN)
+    // are preserved.
+    switch (operator) {
+      case "+":
+        return first + second;
+      case "-":
+        return first - second;
+      case "*":
+        return first * second;
+      case "/":
+        return first / second;
+      default:
+        return second;
+    }
   };
 
   const handleEquals = () => {
@@ -84,32 +98,32 @@ function App() {
           C
         </button>
 
-        <button onClick={() => inputOperator("/")}>÷</button>
-        <button onClick={() => inputOperator("*")}>×</button>
+        <button className="operator" onClick={() => inputOperator("/")}>÷</button>
+        <button className="operator" onClick={() => inputOperator("*")}>×</button>
 
-        <button onClick={() => inputNumber("7")}>7</button>
-        <button onClick={() => inputNumber("8")}>8</button>
-        <button onClick={() => inputNumber("9")}>9</button>
-        <button onClick={() => inputOperator("-")}>−</button>
+        <button className="digit" onClick={() => inputNumber("7")}>7</button>
+        <button className="digit" onClick={() => inputNumber("8")}>8</button>
+        <button className="digit" onClick={() => inputNumber("9")}>9</button>
+        <button className="operator" onClick={() => inputOperator("-")}>−</button>
 
-        <button onClick={() => inputNumber("4")}>4</button>
-        <button onClick={() => inputNumber("5")}>5</button>
-        <button onClick={() => inputNumber("6")}>6</button>
-        <button onClick={() => inputOperator("+")}>+</button>
+        <button className="digit" onClick={() => inputNumber("4")}>4</button>
+        <button className="digit" onClick={() => inputNumber("5")}>5</button>
+        <button className="digit" onClick={() => inputNumber("6")}>6</button>
+        <button className="operator" onClick={() => inputOperator("+")}>+</button>
 
-        <button onClick={() => inputNumber("1")}>1</button>
-        <button onClick={() => inputNumber("2")}>2</button>
-        <button onClick={() => inputNumber("3")}>3</button>
+        <button className="digit" onClick={() => inputNumber("1")}>1</button>
+        <button className="digit" onClick={() => inputNumber("2")}>2</button>
+        <button className="digit" onClick={() => inputNumber("3")}>3</button>
 
         <button className="equals" onClick={handleEquals}>
           =
         </button>
 
-        <button className="zero" onClick={() => inputNumber("0")}>
+        <button className="zero digit" onClick={() => inputNumber("0")}>
           0
         </button>
 
-        <button onClick={handleDecimal}>.</button>
+        <button className="digit" onClick={handleDecimal}>.</button>
       </div>
     </div>
   );
