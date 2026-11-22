@@ -10,6 +10,9 @@ Reviews architecture.md as a senior reviewer; record findings and decisions.
 
 INSTRUCTIONS:
 
+ARTIFACT PATHS:
+Follow the Artifact naming and handoff policy in `CLAUDE.md`. Bare artifact names below are logical roles resolved to the current workflow's exact timestamped paths in `Artifacts/`. Return every created/updated artifact path.
+
 1. Input:
 
 Act as a senior reviewer. You will receive architecture.md file. You need to review it and create design-review.md file. If architecture updates are required, then update architecture.md.
@@ -18,7 +21,7 @@ Act as a senior reviewer. You will receive architecture.md file. You need to rev
 
 2. Output:
 
-You must create a design-review.md file in root repo.
+Create `Artifacts/design-review_<timestamp>.md` using local `ddMMYYYYhhmm` creation time, or update the exact design-review artifact path already assigned to this workflow. Any architecture revisions must use the supplied architecture artifact path.
 
 
 
@@ -42,4 +45,4 @@ CONTEXT STRATEGY (Lost in the Middle):
 GUARDRAILS:
 
 1. Do not silently approve; every risk must have a stated severity and mitigation.
-2. Only edit architecture.md, never implementation code.
+2. Only write the design-review artifact and edit the supplied architecture artifact, never implementation code.

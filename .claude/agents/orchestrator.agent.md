@@ -11,6 +11,10 @@ Act as an Orchestrator for a generic Agentic SDLC workflow.
 
 INSTRUCTIONS:
 
+ARTIFACT PATHS:
+Follow the Artifact naming and handoff policy in `CLAUDE.md`. Bare artifact names below are logical roles resolved to the current workflow's exact timestamped paths in `Artifacts/`.
+Retain every exact artifact path returned by a stage, pass the required paths to subsequent agents and hooks, and show those paths at approval gates. Never substitute a fixed root filename or another workflow's artifact.
+
 1. Input:
 
 Staged Question Policy:

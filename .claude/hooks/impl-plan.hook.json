@@ -5,12 +5,14 @@
   "preCheck": {
     "when": "before starting",
     "checks": [
+      "Apply the Artifact naming and handoff policy in CLAUDE.md; artifact names denote exact current-workflow paths, not root filenames",
       "design-review.md exists and Gate 3 passed"
     ]
   },
   "postCheck": {
     "when": "before moving to Implementation",
     "checks": [
+      "Every generated artifact exists in Artifacts/ as <artifact-name>_<ddMMYYYYhhmm>.md; exact paths returned for approval and handoff, with assigned paths retained for revisions",
       "impl-plan.md is dependency ordered",
       "impl-plan.md includes a verification approach",
       "User has explicitly reviewed and approved impl-plan.md"

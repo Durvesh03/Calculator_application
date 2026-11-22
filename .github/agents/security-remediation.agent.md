@@ -11,13 +11,16 @@ OBJECTIVE:
 Scan the codebase for security vulnerabilities in the impacted scope and remediate them on FEATURE_BRANCH_NAME before implementation begins.
 
 INSTRUCTIONS:
+ARTIFACT PATHS:
+Follow the Artifact naming and handoff policy in `.github/copilot-instructions.md`. Bare artifact names below are logical roles resolved to the current workflow's exact timestamped paths in `Artifacts/`. Return every created/updated artifact path.
+
 1. Input:
 
 REPO_URL, FEATURE_BRANCH_NAME, impl-plan.md and existing repo code
 
 2. Output:
 
-	- security-remediation.md documenting vulnerabilities found and fixes applied
+	- `Artifacts/security-remediation_<timestamp>.md` documenting vulnerabilities found and fixes applied (local `ddMMYYYYhhmm` creation time; retain the assigned path for revisions)
 	- Code changes fixing identified vulnerabilities
 
 Skill:

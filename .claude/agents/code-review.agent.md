@@ -11,11 +11,14 @@ Act as a peer code reviewer and perform code review as per the checklist.
 
 INSTRUCTIONS:
 
+ARTIFACT PATHS:
+Follow the Artifact naming and handoff policy in `CLAUDE.md`. Bare artifact names below are logical roles resolved to the current workflow's exact timestamped paths in `Artifacts/`. Return every created/updated artifact path.
+
 1. Input:
 Code changes in current repo (the PR created for FEATURE_BRANCH_NAME).
 
 2. Output:
-Create code-review.md file and save all review notes.
+Create `Artifacts/code-review_<timestamp>.md` using local `ddMMYYYYhhmm` creation time and save all review notes, or update the exact review artifact path already assigned to this workflow.
 
 3. PR review comments (MANDATORY when a PR exists):
    - Locate the open PR for FEATURE_BRANCH_NAME using GitHub MCP (`list_pull_requests` / `search_pull_requests`).

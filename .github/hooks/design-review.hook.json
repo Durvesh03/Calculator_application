@@ -5,12 +5,14 @@
   "preCheck": {
     "when": "before starting",
     "checks": [
+      "Apply the Artifact naming and handoff policy in copilot-instructions.md; artifact names denote exact current-workflow paths, not root filenames",
       "architecture.md exists and Gate 2 passed"
     ]
   },
   "postCheck": {
     "when": "before moving to Implementation Planning",
     "checks": [
+      "Every generated artifact exists in Artifacts/ as <artifact-name>_<ddMMYYYYhhmm>.md; exact paths returned for approval and handoff, with assigned paths retained for revisions",
       "design-review.md includes risks/gaps + decisions",
       "architecture.md updated if required"
     ]

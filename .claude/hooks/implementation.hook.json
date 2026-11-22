@@ -5,6 +5,7 @@
   "preCheck": {
     "when": "before starting",
     "checks": [
+      "Apply the Artifact naming and handoff policy in CLAUDE.md; artifact names denote exact current-workflow paths, not root filenames",
       "security-remediation.md exists and Gate 5 passed",
       "REPO_URL and FEATURE_BRANCH_NAME provided",
       "FEATURE_BRANCH_NAME checked out (never main)"
@@ -13,6 +14,7 @@
   "postCheck": {
     "when": "before moving to Review",
     "checks": [
+      "Every generated artifact exists in Artifacts/ as <artifact-name>_<ddMMYYYYhhmm>.md; exact paths returned for approval and handoff, with assigned paths retained for revisions",
       "Changes implemented on FEATURE_BRANCH_NAME",
       "Available build/test/lint scripts run if present; otherwise documented as skipped",
       "User has explicitly reviewed and approved the implementation code diff BEFORE any `git push`"

@@ -5,12 +5,14 @@
   "preCheck": {
     "when": "before starting",
     "checks": [
+      "Apply the Artifact naming and handoff policy in copilot-instructions.md; artifact names denote exact current-workflow paths, not root filenames",
       "JIRA_STORY_URL provided by user"
     ]
   },
   "postCheck": {
     "when": "before moving to Architecture",
     "checks": [
+      "Every generated artifact exists in Artifacts/ as <artifact-name>_<ddMMYYYYhhmm>.md; exact paths returned for approval and handoff, with assigned paths retained for revisions",
       "requirements.md includes: scope, FR/NFR, acceptance criteria",
       "Open questions resolved or explicitly deferred"
     ]

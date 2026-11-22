@@ -20,6 +20,9 @@ This agent can also be started directly via the reusable slash command:
 
 INSTRUCTIONS:
 
+ARTIFACT PATHS:
+Follow the Artifact naming and handoff policy in `CLAUDE.md`. Bare artifact names below are logical roles resolved to the current workflow's exact timestamped paths in `Artifacts/`. Return every created/updated artifact path.
+
 1. Input:
 
 You will receive Jira story link from user. You need to go through the story and create a detailed requirement analysis. Clarify with the user in case of any doubt.
@@ -27,7 +30,7 @@ You will receive Jira story link from user. You need to go through the story and
 
 2. Output:
 
-You must create new or update existing (if any) requirements.md file in root repo.
+Create `Artifacts/requirements_<timestamp>.md` using local `ddMMYYYYhhmm` creation time, or update the exact requirements artifact path already assigned to this workflow.
 
 
 CONSTRAINTS:

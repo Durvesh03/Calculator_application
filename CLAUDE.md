@@ -77,19 +77,25 @@ Inputs:
 
 
 
-Artifact files (repo root; create only when the stage runs):
+Artifact files (inside the repo's `Artifacts/` folder; create only when the stage runs):
 
-1. requirements.md
+1. `Artifacts/requirements_<timestamp>.md`
+2. `Artifacts/architecture_<timestamp>.md`
+3. `Artifacts/design-review_<timestamp>.md`
+4. `Artifacts/impl-plan_<timestamp>.md`
+5. `Artifacts/security-remediation_<timestamp>.md`
+6. `Artifacts/code-review_<timestamp>.md`
+7. `Artifacts/verification_<timestamp>.md`
+8. `Artifacts/unit-tests_<timestamp>.md` and `Artifacts/integration-tests_<timestamp>.md` (Verify stage)
 
-2. architecture.md
+Artifact naming and handoff policy (MANDATORY):
 
-3. design-review.md
-
-4. impl-plan.md
-
-5. security-remediation.md
-
-6. verification.md
+1. Create `Artifacts/` if missing. Replace `<timestamp>` with the local creation date/time in `ddMMYYYYhhmm` format (12 digits; `hh` is the 12-hour clock). For example, 22 November 2026 at 11:15 produces `Artifacts/architecture_221120261115.md`. Never write the placeholder literally.
+2. Generate the timestamp when creating each artifact, not from a fixed example or the workflow start time. Keep its exact path when revising it during the same workflow; a new workflow creates new artifacts. If a new path already exists, stop and report the collision rather than overwrite another workflow's file.
+3. Every bare artifact name elsewhere in agents, skills, hooks, and these instructions (e.g. `architecture.md`) denotes that artifact's exact timestamped path for the current workflow, never a fixed filename in the repo root.
+4. Return the exact created/updated paths in each stage's output. The orchestrator must retain them and pass only the required paths to subsequent stages, approvals, and hook checks.
+5. For a directly invoked or resumed stage, use the supplied paths. If a required path is missing or its workflow is ambiguous, ask for the correct path; never select a file from another workflow or sort `ddMMYYYYhhmm` filenames as chronological dates.
+6. All generated artifact documents, including UI test scripts and any saved PR description/changelog draft, follow `Artifacts/<artifact-name>_<timestamp>.md`. Source code and existing maintained project documentation are not generated artifacts. Do not move existing files as part of this policy.
 
 
 
@@ -109,7 +115,7 @@ Branching rule (MANDATORY):
 
 Stage Gates (Hooks):
 
-Each gate's PRE/POST checks are also captured as a standalone gate-check file under `.claude/hooks/<stage>.hook.json`. These are plain documentation gate-checks (not Claude Code's native tool-event hooks) — agents must read the matching file before starting a stage and before advancing to the next one. Every gate-check's POST-CHECK implicitly also requires the applicable guardrail checks above passed.
+Each gate's PRE/POST checks are also captured as a standalone gate-check file under `.claude/hooks/<stage>.hook.json`. These are plain documentation gate-checks (not Claude Code's native tool-event hooks) — agents must read the matching file before starting a stage and before advancing to the next one. Resolve all artifact names in checks using the current workflow's exact paths under the Artifact naming and handoff policy. Every gate-check's POST-CHECK implicitly also requires the applicable guardrail checks above passed.
 
 Gate 1 — Requirements Complete
 
@@ -286,7 +292,7 @@ Memory Types:
 | User memory | Cross-workspace, persistent | Copilot `/memories/` (root) | Durable preferences (e.g. preferred commit style) |
 | Session memory | Current conversation only | Copilot `/memories/session/` | In-progress stage notes, pending approvals |
 | Repository memory | This repo, persistent | Copilot `/memories/repo/` | Verified build/test/lint commands, repo conventions |
-| Task/project memory | This pipeline run | Root artifact files (`requirements.md` ... `verification.md`) | The SDLC state itself — source of truth for stage handoffs |
+| Task/project memory | This pipeline run | Timestamped files in `Artifacts/` (exact paths returned by each stage) | The SDLC state itself — source of truth for stage handoffs |
 | Claude project memory | This repo, persistent | `CLAUDE.md` (this file) | Mirrors repository memory for Claude Code |
 
 Rule: before starting a stage, check this file / repository memory first for known conventions; only ask the user if nothing is recorded. Update repository memory when a new convention is verified during a stage.

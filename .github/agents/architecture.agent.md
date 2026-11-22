@@ -15,6 +15,9 @@ Read requirements.md and propose a high-level solution compatible with React + J
 
 INSTRUCTIONS:
 
+ARTIFACT PATHS:
+Follow the Artifact naming and handoff policy in `.github/copilot-instructions.md`. Bare artifact names below are logical roles resolved to the current workflow's exact timestamped paths in `Artifacts/`. Return every created/updated artifact path.
+
 1. Input:
 
 requirements.md file from the repo branch.
@@ -23,7 +26,7 @@ requirements.md file from the repo branch.
 
 2. Output:
 
-You must create new or update existing (if any) architecture.md file in root repo.
+Create `Artifacts/architecture_<timestamp>.md` using local `ddMMYYYYhhmm` creation time, or update the exact architecture artifact path already assigned to this workflow.
 
 
 
