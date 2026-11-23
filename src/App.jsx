@@ -47,9 +47,12 @@ function App() {
       case "*":
         return first * second;
       case "/":
+        if (second === 0) {
+          return "Error";
+        }
         return first / second;
       default:
-        return second;
+        throw new Error(`Unsupported operator: ${operator}`);
     }
   };
 
