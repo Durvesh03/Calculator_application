@@ -14,6 +14,15 @@ body {
   padding: 20px;
   background: #222;
   border-radius: 15px;
+
+  --btn-number-bg: #3a3a3a;
+  --btn-number-text: #f5f5f5;
+  --btn-operator-bg: #d9822b;
+  --btn-operator-text: #1a1a1a;
+  --btn-clear-bg: #c0392b;
+  --btn-clear-text: #ffffff;
+  --btn-equals-bg: #6c4bd1;
+  --btn-equals-text: #ffffff;
 }
 
 .display {
@@ -46,14 +55,33 @@ button:hover {
   opacity: 0.8;
 }
 
+.number {
+  background: var(--btn-number-bg);
+  color: var(--btn-number-text);
+}
+
+.operator {
+  background: var(--btn-operator-bg);
+  color: var(--btn-operator-text);
+}
+
 .clear {
   grid-column: span 2;
+  background: var(--btn-clear-bg);
+  color: var(--btn-clear-text);
 }
 
 .equals {
   grid-row: span 2;
+  background: var(--btn-equals-bg);
+  color: var(--btn-equals-text);
 }
 
 .zero {
   grid-column: span 2;
+}
+
+:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
